@@ -93,7 +93,7 @@ SQL;
 			$notes[] = new Note([
 				'id' => $note['id'],
 				'note' => $note['note'],
-				'author' => $users[$note['userId']],
+				'author' => $users[$note['userId']] ?? null,
 				'date' => DateTimeHelper::toDateTime($note['dateCreated'])->format(Field::$dateFormat),
 
 				'elementId' => $note['elementId'],
